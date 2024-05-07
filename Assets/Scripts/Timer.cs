@@ -12,8 +12,20 @@ public class Timer : MonoBehaviour
 
     public int CurrentValue => _currentValue;
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+            StartTimer();
+
+        if (Input.GetMouseButtonDown(1))
+            StopTimer();
+    }
+
     public void StartTimer()
     {
+        if (_isTimer)
+            return;
+
         _isTimer = true;
         StartCoroutine(Countdown(_delay));
     }
