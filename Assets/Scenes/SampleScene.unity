@@ -235,29 +235,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421753023}
-  - component: {fileID: 421753022}
+  - component: {fileID: 421753024}
   m_Layer: 0
-  m_Name: Timer
+  m_Name: Coutdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &421753022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421753021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06bf670129827164296f3cdac02feea8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentValue: 0
-  _delay: 0.5
-  _isTimer: 0
 --- !u!4 &421753023
 Transform:
   m_ObjectHideFlags: 0
@@ -273,6 +258,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &421753024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421753021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2126f8800eb6e3468cb100d8014f15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentValue: 0
+  _delay: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +810,7 @@ GameObject:
   - component: {fileID: 2004571248}
   - component: {fileID: 2004571247}
   m_Layer: 0
-  m_Name: TimerView
+  m_Name: CoutdownView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -830,7 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countdownText: {fileID: 1098359766}
-  _timer: {fileID: 421753022}
+  _countdown: {fileID: 421753024}
 --- !u!4 &2004571248
 Transform:
   m_ObjectHideFlags: 0

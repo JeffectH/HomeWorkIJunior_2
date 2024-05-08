@@ -27,11 +27,14 @@ public class Countdown : MonoBehaviour
     {
         if (_coroutine != null)
             StopCoroutine(_coroutine);
+
+        _coroutine = null;
     }
 
     public void Restart()
     {
-        _coroutine = StartCoroutine(Work(_delay));
+        if (_coroutine == null)
+            _coroutine = StartCoroutine(Work(_delay));
     }
 
     private IEnumerator Work(float delay)
