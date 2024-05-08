@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class Countdown : MonoBehaviour
 {
-    public event Action ValuerChancged;
-    public int CurrentValue => _currentValue;
-
     [SerializeField] private int _currentValue;
     [SerializeField] private float _delay = 0.5f;
 
-    private int _startInputValue = 0;
-    private int _stopInputValue = 1;
+    private int _inputValue = 0;
+
     private Coroutine _coroutine;
+
+    public event Action ValuerChancged;
+    public int CurrentValue => _currentValue;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(_startInputValue))
-            Restart();
-
-        if (Input.GetMouseButtonDown(_stopInputValue))
-            Stop();
+        if (Input.GetMouseButtonDown(_inputValue))
+        {
+            if (_coroutine == null)
+            {
+                Restart();
+            }
+            else
+            {
+                Stop();
+            }
+        }
     }
 
     public void Stop()
