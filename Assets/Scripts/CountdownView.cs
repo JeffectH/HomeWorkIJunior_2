@@ -16,8 +16,5 @@ public class CountdownView : MonoBehaviour
         _countdown.ValuerChancged -= UpdateView;
     }
 
-    private void UpdateView()
-    {
-        _countdownText.text = _countdown.CurrentValue.ToString();
-    }
+    private void UpdateView(int value) => _countdownText.text = value.ToString();
 }

@@ -11,8 +11,7 @@ public class Countdown : MonoBehaviour
 
     private Coroutine _coroutine;
 
-    public event Action ValuerChancged;
-    public int CurrentValue => _currentValue;
+    public event Action<int> ValuerChancged;
 
     private void Update()
     {
@@ -49,8 +48,7 @@ public class Countdown : MonoBehaviour
 
         while (enabled)
         {
-            _currentValue++;
-            ValuerChancged?.Invoke();
+            ValuerChancged?.Invoke(_currentValue++);
             yield return wait;
         }
     }
